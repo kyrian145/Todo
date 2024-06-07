@@ -16,3 +16,4 @@ model Todo {
   content String
   completed Boolean @default(false)
 }
+

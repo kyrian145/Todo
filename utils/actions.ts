@@ -15,6 +15,7 @@ export const newTodo = async (data: FormData) => {
   }
 }
 
+/*
 export const completeTodo = async (id: string) => {
   await db.todo.update({
     where: { id },
@@ -24,3 +25,4 @@ export const completeTodo = async (id: string) => {
   })
   revalidatePath('/todos')
 }
+ */
