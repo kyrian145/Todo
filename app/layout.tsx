@@ -1,5 +1,14 @@
 import Link from 'next/link'
+
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
 import './globals.css'
+
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -21,8 +30,15 @@ export default function RootLayout({
   ]
 
   return (
+    <ClerkProvider>
     <html lang="en">
       <body className={`${inter.className} p-10 h-screen w-screen`}>
+      <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
         <header className="mb-20">
           <nav>
             <ul className="flex items-center">
@@ -37,6 +53,7 @@ export default function RootLayout({
         {children}
       </body>
     </html>
+    </ClerkProvider>
   )
 }
 

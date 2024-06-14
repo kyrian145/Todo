@@ -6,10 +6,11 @@ const DashboardLayout = ({ children }) => {
       <div>
         <h1>Todos</h1>
       </div>
+      <div>{children}</div>
+      
       <div>
         <NewTodoForm />
       </div>
-      <div>{children}</div>
     </div>
   )
 }
